@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>devops project</title>     
+        
+</head>
+<body>
+    <h1>Devops Project</h1>
+    <p>Running with Docker</p>
+    <button onlick="getData()">Get API Data</button>
+
+    <script>
+        async function getData(){
+            const res = await fetch('/api')
+            const data = await res.json()
+            alert(JSON.stringify(data))
+        }
+    </script>
+</body>
+</html>
