@@ -1,123 +1,78 @@
 #  DevOps Project - Node.js + Docker + CI/CD
 
 ##  Project Overview
+This project demonstrates a complete DevOps workflow:
+- Node.js application
+- Docker containerization
+- CI/CD pipeline using GitHub Actions
+- Deployment on Render (live application)
 
-This project demonstrates a complete DevOps workflow using:
+---
 
-* Node.js application
-* Docker containerization
-* GitHub for version control
-* GitHub Actions for CI/CD pipeline
-* DockerHub for image storage
+##  Architecture
+User → Render → Docker Container → Node.js App
 
 ---
 
 ##  Tech Stack
-
-* Node.js
-* Express.js
-* Docker
-* GitHub
-* GitHub Actions (CI/CD)
-* DockerHub
+- Node.js
+- Docker
+- GitHub Actions (CI/CD)
+- DockerHub
+- Render (Deployment)
 
 ---
 
-##  Project Structure
-
-```
-devops-project/
-│── app.js
-│── package.json
-│── Dockerfile
-│── .github/
-│   └── workflows/
-│       └── deploy.yml
-```
+##  CI/CD Workflow
+1. Code pushed to GitHub
+2. GitHub Actions triggers pipeline
+3. Docker image is built
+4. Image pushed to DockerHub
+5. Application deployed on Render
 
 ---
 
-##  Features
-
-* Simple Node.js API
-* Dockerized application
-* Automated CI/CD pipeline
-* Docker image pushed to DockerHub on every commit
+##  Live Demo
+ https://devops-project-m9sa.onrender.com
 
 ---
 
-##  Docker Setup
+##  Docker Commands (Local Setup)
 
-### Build Docker Image
-
-```
+### Build image
 docker build -t devops-app .
-```
 
-### Run Container
-
-```
+### Run container
 docker run -p 3001:3000 devops-app
-```
-
-### Access App
-
-```
-http://localhost:3001
-```
 
 ---
 
-##  CI/CD Pipeline
+##  API Endpoints
 
-This project uses GitHub Actions for automation:
+### Home
+GET /
+Response:
+{
+  "message": "Devops project running"
+}
 
-* Code push triggers pipeline
-* Docker image is built automatically
-* Image is pushed to DockerHub
+### Health Check
+GET /health  
+Response: OK
 
-### Workflow File:
-
-```
-.github/workflows/deploy.yml
-```
-
----
-
-##  Environment Variables (GitHub Secrets)
-
-The following secrets are used:
-
-* DOCKER_USERNAME
-* DOCKER_PASSWORD
+### About
+GET /about  
+Response: DevOps Project by Abhishek
 
 ---
 
-##  DockerHub Repository
-
- https://hub.docker.com/r/abhi4325/devops-app
-
----
-
-##  Learning Outcome
-
-* Learned Docker containerization
-* Implemented CI/CD pipeline
-* Automated build and deployment process
-* Understood DevOps workflow
-
----
-
-##  Future Improvements
-
-* Deploy on AWS EC2 / Render
-* Add monitoring (Prometheus, Grafana)
-* Add frontend UI
-
----
-
-##  Author
-
+## Author
 Abhishek Pandey
 
 ---
+
+##  Key Features
+- End-to-end DevOps pipeline
+- Automated Docker build & push
+- Live deployment
+- Scalable container-based architecture
